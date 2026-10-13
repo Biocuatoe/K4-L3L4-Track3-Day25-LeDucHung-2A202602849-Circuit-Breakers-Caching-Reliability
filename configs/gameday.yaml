@@ -41,7 +41,7 @@ client:
     window_size: 20
     min_calls: 10
     failure_rate_threshold: 0.5
-    slow_call_s: 5.0
+    slow_call_s: 3.0
     slow_rate_threshold: 0.6
     open_duration_s: 10.0
     half_open_max_probes: 2
@@ -49,11 +49,10 @@ client:
 
 # ----------------------------------------------------------------------------
 # Part G: YOUR semantic cache settings (read by SemanticCache).
-# These starter values are deliberately naive: run `make cache`, read
-# wrong_answers_by_reason, tune each value and justify it in report section 8.
+# Tuned with `make cache` + multi-seed sweeps; justification in reports/REPORT.md section 8.
 # ----------------------------------------------------------------------------
 cache:
-  similarity_threshold: 0.80
-  ttl_s: 600
-  max_stale_s: 0
+  similarity_threshold: 0.92
+  ttl_s: 60
+  max_stale_s: 300
   max_entries: 500
